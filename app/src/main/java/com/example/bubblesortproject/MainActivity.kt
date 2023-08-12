@@ -11,7 +11,7 @@ import java.lang.reflect.Array
 class MainActivity : AppCompatActivity() {
     var count=0
     private lateinit var binding: ActivityMainBinding
-    var arr=IntArray(5)
+    var arr= IntArray(5)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,18 +21,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun Al(view: View){
-        arr[count] = binding.editTextNumber.text.toString().toInt()
-        count++
+        binding.Al.setOnClickListener{
+            arr[count] = binding.editTextNumber.text.toString().toInt()
+            count++
+
+        }
     }
     fun Goster(view: View){
+        binding.textView.clearComposingText()
         var temp:Int=0
         val size=arr.size
         for(i in 0 until  size-1){
             for (j in 0 until  size-i-1){
                 if(arr[j]<arr[j+1]){
-                    temp=arr[j+1]
-                    arr[j+1]=arr[j]
-                    arr[j]=temp
+                    temp=arr[j]
+                    arr[j]=arr[j+1]
+                    arr[j+1]=temp
                 }
             }
         }
