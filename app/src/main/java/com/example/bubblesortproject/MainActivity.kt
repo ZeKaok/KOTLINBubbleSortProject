@@ -21,12 +21,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun Al(view: View){
-       arr.set(count,binding.editTextNumber.text.toString().toInt())
+        arr[count] = binding.editTextNumber.text.toString().toInt()
+        count++
     }
     fun Goster(view: View){
         var temp:Int=0
-        for(i in arr ){
-            for (j in arr){
+        val size=arr.size
+        for(i in 0 until  size-1){
+            for (j in 0 until  size-i-1){
                 if(arr[j]<arr[j+1]){
                     temp=arr[j+1]
                     arr[j+1]=arr[j]
