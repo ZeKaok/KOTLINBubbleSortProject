@@ -9,7 +9,7 @@ import org.w3c.dom.Text
 import java.lang.reflect.Array
 
 class MainActivity : AppCompatActivity() {
-    var count=0
+    var count:Int
     private lateinit var binding: ActivityMainBinding
     var arr= IntArray(5)
 
@@ -21,11 +21,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun Al(view: View){
-        binding.Al.setOnClickListener{
-            arr[count] = binding.editTextNumber.text.toString().toInt()
-            count++
-
-        }
+        arr[count] = binding.editTextNumber.text.toString().toInt()
+        count++
     }
     fun Goster(view: View){
         binding.textView.clearComposingText()
