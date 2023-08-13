@@ -21,19 +21,18 @@ class MainActivity : AppCompatActivity() {
 
         binding.Al.setOnClickListener{
             val size=arr.size
-            arr[count] = binding.editTextNumber.text.toString().toInt()
+            arr.set(count,binding.editTextNumber.text.toString().toInt())
             count++
             bubbleSort(arr)
         }
         binding.Sirala.setOnClickListener {
-            binding.textView.clearComposingText()
-            for (i in arr){
-                binding.textView2.append(" "+arr[i])
-            }
+            binding.textView2.clearComposingText()
+
+            binding.textView2.append(arr.contentToString())
+
+            count=0
         }
     }
-
-
 
     private fun bubbleSort(arr: IntArray): IntArray {
         val n = arr.size
@@ -48,7 +47,6 @@ class MainActivity : AppCompatActivity() {
         }
         return arr
     }
-
 
 }
 
