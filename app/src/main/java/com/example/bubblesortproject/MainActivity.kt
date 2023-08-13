@@ -2,37 +2,51 @@ package com.example.bubblesortproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Size
 import android.view.View
+import android.widget.TextView
 import com.example.bubblesortproject.databinding.ActivityMainBinding
+import org.w3c.dom.Text
 import java.lang.reflect.Array
 
 class MainActivity : AppCompatActivity() {
-    var count=0
+    var count:Int=0
     private lateinit var binding: ActivityMainBinding
-    var arr=IntArray(5)
+    var arr= IntArray(5)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.Al.setOnClickListener{
+            val size=arr.size
+            arr[count] = binding.editTextNumber.text.toString().toInt()
+            count++
+            bubbleSort(arr)
+        }
+        binding.Sirala.setOnClickListener {
+            binding.textView.clearComposingText()
+            for (i in arr){
+                binding.textView2.append(" "+arr[i])
+            }
+        }
     }
 
-    fun Al(view: View){
-       arr.set(count,binding.editTextNumber.text.toString().toInt())
-    }
-    fun Goster(view: View){
 
-    }
-    fun Sort(){
 
-    }
-
-    fun Swap( num1:Int,num2: Int){
-
-        var tmp:Int=0
-        tmp=num1
-        num1=num2
-        num2=tmp
+    private fun bubbleSort(arr: IntArray): IntArray {
+        val n = arr.size
+        for (i in 0 until n - 1) {
+            for (j in 0 until n - i - 1) {
+                if (arr[j] > arr[j + 1]) {
+                    val temp = arr[j]
+                    arr[j] = arr[j + 1]
+                    arr[j + 1] = temp
+                }
+            }
+        }
+        return arr
     }
 
 
