@@ -8,7 +8,6 @@ import android.widget.TextView
 import com.example.bubblesortproject.databinding.ActivityMainBinding
 import org.w3c.dom.Text
 import java.lang.reflect.Array
-
 class MainActivity : AppCompatActivity() {
     var count:Int=0
     private lateinit var binding: ActivityMainBinding
@@ -20,16 +19,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.Al.setOnClickListener{
-            val size=arr.size
             arr.set(count,binding.editTextNumber.text.toString().toInt())
             count++
             bubbleSort(arr)
         }
         binding.Sirala.setOnClickListener {
             binding.textView2.clearComposingText()
-
             binding.textView2.append(arr.contentToString())
-
             count=0
         }
     }
@@ -37,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     private fun bubbleSort(arr: IntArray): IntArray {
         val n = arr.size
         for (i in 0 until n - 1) {
-            for (j in 0 until n - i - 1) {
+            for (j in 0 until n- i  - 1) {
                 if (arr[j] > arr[j + 1]) {
                     val temp = arr[j]
                     arr[j] = arr[j + 1]
