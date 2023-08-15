@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             call.BubbleSort(arr)
         }
         binding.Sirala.setOnClickListener {
-            binding.textView2.clearComposingText()
+            binding.textView2.setText(null)
             binding.textView2.append(arr.contentToString())
             count=0
         }
