@@ -5,44 +5,35 @@ import android.os.Bundle
 import android.util.Size
 import android.view.View
 import android.widget.TextView
+import classes.Bubblesort
 import com.example.bubblesortproject.databinding.ActivityMainBinding
 import org.w3c.dom.Text
 import java.lang.reflect.Array
 class MainActivity : AppCompatActivity() {
-    var count:Int=0
+
     private lateinit var binding: ActivityMainBinding
     var arr= IntArray(5)
+    var count:Int=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val call =Bubblesort(arr)
 
-        binding.Al.setOnClickListener{
-            arr.set(count,binding.editTextNumber.text.toString().toInt())
+        binding.Al.setOnClickListener {
+          arr.set(count,binding.editTextNumber.text.toString().toInt())
             count++
-            bubbleSort(arr)
+            call.BubbleSort(arr)
         }
         binding.Sirala.setOnClickListener {
             binding.textView2.clearComposingText()
             binding.textView2.append(arr.contentToString())
             count=0
         }
+
     }
 
-    private fun bubbleSort(arr: IntArray): IntArray {
-        val n = arr.size
-        for (i in 0 until n - 1) {
-            for (j in 0 until n- i  - 1) {
-                if (arr[j] > arr[j + 1]) {
-                    val temp = arr[j]
-                    arr[j] = arr[j + 1]
-                    arr[j + 1] = temp
-                }
-            }
-        }
-        return arr
-    }
 
 }
 
