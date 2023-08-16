@@ -1,4 +1,4 @@
-# KOTLINBubbleSortProject
+# KOTLIN Bubble Sort Project
 
 Bubble Sort is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until no more swaps are needed, indicating that the list is sorted. Bubble Sort gets its name from the way smaller elements "bubble" to the top of the list while larger elements "sink" to the bottom.
 
