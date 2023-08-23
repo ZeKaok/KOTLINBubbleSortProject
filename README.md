@@ -6,3 +6,9 @@ While Bubble Sort is easy to understand and implement, it is not the most effici
 
 # **OOP, XML AND BINDING
 
+To watch the video that I made to describe how I did, click the picture below.
+
+[<img src="https://github.com/zeraa123/KOTLINBubbleSortProject/assets/121049907/a4df2742-511f-4749-8429-70b2cec0f235" width="75%">](https://www.youtube.com/watch?v=v7lHcTSv8zk)
+
+
+
